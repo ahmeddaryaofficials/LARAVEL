@@ -14,15 +14,18 @@ use App\Http\Controllers\Frontend\FrontendController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//users
 Route::get('/', [FrontendController::class,'index']);
 Route::get('categorys', [FrontendController::class,'categorys']);
 Route::get('view_category/{slug}', [FrontendController::class,'view']);
 Route::get('view_category/{cate_slug}/{ven_meta}', [FrontendController::class,'vendorview']);
+Route::post('/send_inquiry',  'BookingController@booking_availibility');
+Route::get('/user_confirm_booking', [FrontendController::class,'confirm_booking']);
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//admin
  Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/dashboard',  'Admin\FrontendController@index');
     Route::get('/categories',  'Admin\CategoryController@index');
@@ -38,6 +41,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::post('update_vendor/{id}', [VendorController::class,'update']);
     Route::get('delete_vendors/{id}', [VendorController::class,'delete']);
  });
+
+ //vendors
  Route::middleware(['auth', 'isVendor'])->group(function () {
     Route::get('vendor_dashboard',  'Vendor\FrontendController@index');
+    Route::get('/get_inquiry',  'Vendor\FrontendController@get_inquiry');
+    Route::post('/change_availibility',  'Vendor\FrontendController@change_availibility');
  });

@@ -18,17 +18,17 @@
         <ul class="navbar-nav  justify-content-end">
           <li class="nav-item d-flex align-items-center">
             <a href="../pages/sign-in.html" class="nav-link text-body font-weight-bold px-0">
-            
+
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa fa-user me-sm-1"></i>
                 </a>
             <ul class="dropdown-menu">
-                
+
                 <li>
                  <a class="dropdown-item" href="#">profile</a>
                 </li>
-                <li> 
+                <li>
                      <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >
                      {{ __('Logout') }}
                      </a>
@@ -36,7 +36,7 @@
                             @csrf
                         </form>
                 </li>
-                
+
              </ul>
         </li>
             </a>

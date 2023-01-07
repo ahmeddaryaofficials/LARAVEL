@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use DB;
 use App\Models\Vendors;
 use App\Models\Category;
 class FrontendController extends Controller
@@ -48,6 +50,18 @@ class FrontendController extends Controller
         {
             return redirect('/');
         }
+    }
+    public function confirm_booking()
+    {
+      $confirm_booking=  DB::table('booking_confirmation')
+        ->join('vendors', function ($join) {
+            $join->on('booking_confirmation.cate_id', '=', 'vendors.id')
+                 ->where('booking_confirmation.booking_availibility', '=', 1)
+                 ->where('booking_confirmation.user_id', '=', Auth::user()->id);
+        })
+        ->get();
+
+      return view('frontend.booking_confirm',compact('confirm_booking'));
     }
 
 }
