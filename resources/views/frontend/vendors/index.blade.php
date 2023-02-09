@@ -3,9 +3,100 @@
 view
 @endsection
 @section('content')
+<div class="container mt-5 mb-3">
+    <div class="row">
+        @foreach ( $vendor as $item )
+        <div class="col-md-4">
+
+            <div class="card p-3 mb-2">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-row align-items-center">
+                        <div class="icon"> <img src="{{asset('assets/uploads/vendors/'.$item->image)}}" alt="rover" /> </div>
+                        <div class="ms-2 c-details">
+                            <h6 class="mb-0">{{$item->vendor_name}}</h6> <span>{{$item->locaation}}</span>
+                        </div>
+                    </div>
+                    <div class="badge"> <span>@if ($item->cate_id == 7)
+                        Banquet
+
+                    @endif
+                    @if ($item->cate_id ==10)
+                        Caters
+                    @endif
+
+                </span> </div>
+                </div>
+                <div class="mt-5">
+                    <h3 class="heading">{{$item->vendor_name}}<br><p>{{$item->locaation}}</p></h3>
+
+                </div>
+            </div>
+
+        </div>
+        @endforeach
 
 
+    </div>
+</div>
+<style>
+    body {
+    background-color: #fff
+}
 
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.c-details span {
+    font-weight: 300;
+    font-size: 13px
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 39px
+}
+
+.badge span {
+    margin-top: 10px;
+    background-color: #2c6877;
+    width: 60px;
+    height: 25px;
+    padding-bottom: 3px;
+    border-radius: 5px;
+    display: flex;
+    color: #fed85d;
+    justify-content: center;
+    align-items: center
+}
+
+.progress {
+    height: 10px;
+    border-radius: 10px
+}
+
+.progress div {
+    background-color: red
+}
+
+.text1 {
+    font-size: 14px;
+    font-weight: 600
+}
+
+.text2 {
+    color: #a5aec0
+}
+</style>
+{{--
 <div class="py-5">
     <div class="container">
         @foreach ( $vendor as $item )
@@ -116,5 +207,5 @@ view
   color: #545d7a;
 }
 
-</style>
+</style> --}}
 @endsection

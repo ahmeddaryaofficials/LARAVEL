@@ -19,3 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('/get_all/{id}', [MobileController::class,'fetch']);
+Route::post('/loginnow', [MobileController::class,'login']);
+Route::post('/Registernow', [MobileController::class,'Register']);

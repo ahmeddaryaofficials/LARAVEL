@@ -1,63 +1,91 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | Dashboard</title>
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback')}}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css')}}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="{{ asset('assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{{ asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="{{ asset('assets/plugins/jqvmap/jqvmap.min.css')}}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css')}}">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="{{ asset('assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{{ asset('assets/plugins/daterangepicker/daterangepicker.css')}}">
+  <!-- summernote -->
+  <link rel="stylesheet" href="{{ asset('assets/plugins/summernote/summernote-bs4.min.css')}}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-   
-    <!-- Fonts -->
-    <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
-  <!-- Nucleo Icons -->
-  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
-  <!-- Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <!-- Material Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-
-    <!-- Styles -->
-    
-    <link href="{{ asset('admin/css/material-dashboard.css?v=3.0.4') }}" rel="stylesheet">
-    <link href="{{ asset('admin/css/custom.css') }}" rel="stylesheet">
 </head>
-<body>
-   
-    @include('layouts.inc.sidebar')
-    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-     @include('layouts.inc.adminnav')
-     <div class="container-fluid py-4">
-        <div class="row mb-4">
-            @yield('content')
-        </div>
-        @include('layouts.inc.adminfooter')
-     </div>
-    </main>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
 
-       
-         
-      <!-- Github buttons -->
-      <script async defer src="https://buttons.github.io/buttons.js"></script>
-      <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-      <script src="{{ asset('admin/js/material-dashboard.min.js?v=3.0.4') }}" defer></script>
-      <script src="{{ asset('admin/js/core/popper.min.js') }}" defer></script>
-      <script src="{{ asset('admin/js/core/bootstrap.min.js') }}" defer></script>
-      <script src="{{ asset('admin/js/plugins/perfect-scrollbar.min.js') }}" defer></script>
-      <script src="{{ asset('admin/js/plugins/smooth-scrollbar.min.js') }}" defer></script>
-      <script src="{{ asset('admin/js/plugins/chartjs.min.js') }}" defer></script>
-      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-      @if (session ('status'))
-        <script>
-          swal("{{ session ('status')}}")
-        </script>
-      @endif
-  @yield('scripts')
-      
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="{{asset('assets/uploads/logo/dawat_logo.jpeg')}}" alt="DAWAT.PK" height="60" width="60">
+  </div>
+
+  <!-- Navbar -->
+  @include('layouts.inc.sidebar')
+
+   @include('layouts.inc.adminnav')
+   <div class="content-wrapper">
+
+        @yield('content')
+
+      {{-- <div class="row mb-4">
+          @yield('content')
+      </div> --}}
+
+   </div>
+   @include('layouts.inc.adminfooter')
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="{{ asset('assets/plugins/jquery/jquery.min.js')}}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{{ asset('assets/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- ChartJS -->
+<script src="{{ asset('assets/plugins/chart.js/Chart.min.js')}}"></script>
+<!-- Sparkline -->
+<script src="{{ asset('assets/plugins/sparklines/sparkline.js')}}"></script>
+<!-- JQVMap -->
+<script src="{{ asset('assets/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
+<script src="{{ asset('assets/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
+<!-- jQuery Knob Chart -->
+<script src="{{ asset('assets/plugins/jquery-knob/jquery.knob.min.js')}}"></script>
+<!-- daterangepicker -->
+<script src="{{ asset('assets/plugins/moment/moment.min.js')}}"></script>
+<script src="{{ asset('assets/plugins/daterangepicker/daterangepicker.js')}}"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="{{ asset('assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+<!-- Summernote -->
+<script src="{{ asset('assets/plugins/summernote/summernote-bs4.min.js')}}"></script>
+<!-- overlayScrollbars -->
+<script src="{{ asset('assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{ asset('assets/dist/js/adminlte.js')}}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{ asset('assets/dist/js/demo.js')}}"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{{ asset('assets/dist/js/pages/dashboard.js')}}"></script>
 </body>
 </html>

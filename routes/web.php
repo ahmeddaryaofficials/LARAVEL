@@ -15,6 +15,10 @@ use App\Http\Controllers\Frontend\FrontendController;
 |
 */
 //users
+Route::middleware(['cors'])->group(function () {
+    Route::post('/hogehoge', 'Controller@hogehoge');
+});
+
 Route::get('/', [FrontendController::class,'index']);
 Route::get('categorys', [FrontendController::class,'categorys']);
 Route::get('view_category/{slug}', [FrontendController::class,'view']);
@@ -24,7 +28,9 @@ Route::get('/user_confirm_booking', [FrontendController::class,'confirm_booking'
 Auth::routes();
 
 
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 //admin
  Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/dashboard',  'Admin\FrontendController@index');

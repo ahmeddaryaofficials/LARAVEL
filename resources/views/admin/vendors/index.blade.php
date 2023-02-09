@@ -8,6 +8,7 @@
 
 
 <div class="card-body">
+    <div class="table-responsive">
     <table style="justify-content: center" class="table">
         <thead>
             <tr class="table-primary">
@@ -20,12 +21,12 @@
         </thead>
         <tbody>
             @foreach ($vendors as $item )
-            <td><img src="{{asset('assets/uploads/vendors/'.$item->image)}}" class="cate-image" alt="image here"></td> 
-               
+            <td><img src="{{asset('assets/uploads/vendors/'.$item->image)}}"height="50%" width="50%" class="cate-image" alt="image here"></td>
 
-               <td>{{ $item->id }}</td> 
-               <td>{{ $item->vendor_name }}</td> 
-               <td>{{ $item->selling_price }}</td> 
+
+               <td>{{ $item->id }}</td>
+               <td>{{ $item->vendor_name }}</td>
+               <td>{{ $item->selling_price }}</td>
                <td>
                 <a href="{{url('edit_vendors/'.$item->id)}}" class="btn btn-primary" c>edit</a>
                 <a href="{{url('delete_vendors/'.$item->id)}}" class="btn btn-danger">delete</a>

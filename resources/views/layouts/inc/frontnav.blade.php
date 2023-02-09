@@ -9,6 +9,14 @@
             @if (Route::has('login'))
             <li class="nav-item">
                 @auth
+
+                    <a href="{{ route('logout') }}" class=" nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >
+
+                        Logout
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 <a href="{{ url('/user_confirm_booking') }}" class=" nav-link">confirm booking</a>
 
                 @else
