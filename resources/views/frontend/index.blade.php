@@ -7,7 +7,7 @@ welcome to Dawat
 <div class="py-5">
     <div class="container">
         <div class="row">
-            <h3>Featured Vendors</h3>
+            <h3>Featureds Vendors</h3>
             <div class="owl-carousel featured-carousel owl-theme">
                 @foreach ( $featured_vendor as $item )
                 <div class="item">
