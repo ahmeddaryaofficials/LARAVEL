@@ -7,7 +7,7 @@
 </div>
 
 <div class="card-body">
-
+    <div class="table-responsive">
         <table style="justify-content: center" class="table">
             <thead>
                 <tr class="table-primary">
@@ -30,7 +30,7 @@
                             id="dropdownMenuButton"
                             data-toggle="dropdown"
                         @endif  aria-expanded="false" >
-                         @if ($item->booking_availibility ==0)
+                         @if ($item->booking_availibility == 0)
                              not confirmed
                          @else
                          confirmed
@@ -47,7 +47,7 @@
                 @endforeach
             </tbody>
         </table>
-
+    </div>
 </div>
 
 </div>
