@@ -19,7 +19,7 @@ class VendorController extends Controller
 
     {
         $category= Category::all();
-        return view('admin.Vendors.add',compact('category'));
+        return view('admin.vendors.add',compact('category'));
 
 
     }
@@ -39,6 +39,9 @@ class VendorController extends Controller
         $user->id =$ran;
         $vendors->id =$ran;
         $user->role_as=2;
+        $vendors->min = $request->input('min');
+        $vendors->max = $request->input('max');
+        $vendors->locaation = $request->input('location');
         $vendors->cate_id = $request->input('cate_id');
         $vendors->vendor_name = $request->input('vendor_name');
         $user->name = $request->input('vendor_name');
@@ -58,7 +61,7 @@ class VendorController extends Controller
         $vendors->save();
         $user->save();
 
-        return redirect('/add_vendors')->with('status','Vendors added successfully');
+        return redirect('/vendors')->with('status','Vendors added successfully');
     }
     public function edit($id)
     {
@@ -72,16 +75,16 @@ class VendorController extends Controller
         $user =User::find($id);
      if($request->hasFile('image'))
      {
-       
-       
+
+
         $file =$request->file('image');
         $ext=$file->getClientOriginalExtension();
         $filename = time().'.'.$ext;
         $file->move('assets/uploads/vendors/',$filename);
         $vendors->image =$filename;
      }
-     
-       
+
+     $vendors->locaation = $request->input('location');
         $vendors->vendor_name = $request->input('vendor_name');
         $user->name =$request->input('vendor_name');
         $vendors->vendor_username = $request->input('vendor_username');

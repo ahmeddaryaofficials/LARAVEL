@@ -21,7 +21,7 @@
         </thead>
         <tbody>
             @foreach ($category as $item )
-            <td><img src="{{asset('assets/uploads/Category/'.$item->image)}}" height="50%" width="50%" class="cate-image" alt="image here"></td>
+            <td><img src="{{asset('assets/uploads/category/'.$item->image)}}" height="50%" width="50%" class="cate-image" alt="image here"></td>
 
 
                <td>{{ $item->id }}</td>

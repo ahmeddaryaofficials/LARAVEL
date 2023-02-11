@@ -44,6 +44,7 @@
     <!-- Daterange picker -->
     <link rel="stylesheet" href="{{ asset('assets/plugins/daterangepicker/daterangepicker.css')}}">
     <!-- summernote -->
+    <link rel= “manifest” href= “manifest.json” />
     <link href="{{ asset('admin/css/material-dashboard.css?v=3.0.4') }}" rel="stylesheet">
     <link href="{{ asset('admin/css/custom.css') }}" rel="stylesheet">
 </head>
@@ -53,7 +54,7 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-          <img class="animation__shake" src="{{asset('assets/uploads/logo/dawat_logo.jpeg')}}" alt="DAWAT.PK" height="60" width="60">
+          <img class="animation__shake" src="{{asset('assets/uploads/logo/dawat_logo.jpeg')}}" alt="DAWAT" height="60" width="60">
         </div>
 
         <!-- Navbar -->

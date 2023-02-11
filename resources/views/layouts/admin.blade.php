@@ -25,14 +25,14 @@
   <link rel="stylesheet" href="{{ asset('assets/plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{ asset('assets/plugins/summernote/summernote-bs4.min.css')}}">
-
+  <link rel= “manifest” href= “manifest.json” />
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="{{asset('assets/uploads/logo/dawat_logo.jpeg')}}" alt="DAWAT.PK" height="60" width="60">
+    <img class="animation__shake" src="{{asset('assets/uploads/logo/dawat_logo.jpeg')}}" alt="DAWAT" height="60" width="60">
   </div>
 
   <!-- Navbar -->

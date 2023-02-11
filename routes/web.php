@@ -20,6 +20,7 @@ Route::middleware(['cors'])->group(function () {
 });
 
 Route::get('/', [FrontendController::class,'index']);
+Route::get('/wait', [FrontendController::class,'wait']);
 Route::get('categorys', [FrontendController::class,'categorys']);
 Route::get('view_category/{slug}', [FrontendController::class,'view']);
 Route::get('view_category/{cate_slug}/{ven_meta}', [FrontendController::class,'vendorview']);

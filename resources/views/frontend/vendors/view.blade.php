@@ -349,6 +349,7 @@ if($('#datepicker').val() != '')
 
                 }, 5000);
           }
+          window.location.href = '/wait'
         }
 
       //Display Response Success Message
