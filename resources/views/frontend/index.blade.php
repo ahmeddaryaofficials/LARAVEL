@@ -11,7 +11,7 @@ welcome to Dawat
             <div class="owl-carousel featured-carousel owl-theme">
                 @foreach ( $featured_vendor as $item )
                 <div class="item">
-
+                    <a href="{{url('view_category/'.$item->cate_id.'/'.$item->meta_title)}}">
                     <div class="card" style="width: 18rem; height: 20rem">
                         <img src="{{asset('assets/uploads/vendors/'.$item->image)}}" class="card-img-top" alt="..." height="70%" width="100%">
                         <div class="card-body">
@@ -26,7 +26,7 @@ welcome to Dawat
                         </div>
                         </div>
                       </div>
-
+                    </a>
                 </div>
                 @endforeach
 

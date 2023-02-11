@@ -41,9 +41,9 @@ class FrontendController extends Controller
         return('/')->with('status','slug doesnot exists');
      }
     }
-    public function vendorview($cate_slug,$ven_meta)
+    public function vendorview($id,$ven_meta)
     {
-        if(Category::where('slug',$cate_slug)->exists())
+        if(Category::where('id',$id)->exists())
         {
           if(Vendors::where('meta',$ven_meta))
           {

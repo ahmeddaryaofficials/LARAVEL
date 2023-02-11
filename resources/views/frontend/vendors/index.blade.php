@@ -99,10 +99,13 @@ view
 
 <div class="py-5">
     <div class="container">
+
+      <h1>Sub Category-{{$category->name}}</h1>
+
         @foreach ( $vendor as $item )
 
         <div class="card">
-            <a href="{{url('view_category/'.$category->slug.'/'.$item->meta_title)}}">
+            <a href="{{url('view_category/'.$category->id.'/'.$item->meta_title)}}">
           <div class="card-header">
             <img src="{{asset('assets/uploads/vendors/'.$item->image)}}" alt="rover" />
           </div>
@@ -118,7 +121,7 @@ view
 
                       Starting from
 
-                   <strong> {{$item->selling_price}} rs</strong></h5>
+                   <strong> {{$item->selling_price}} Rs</strong></h5>
               </div>
             </div>
           </div>
