@@ -4,9 +4,7 @@
 @endsection
 @section('content')
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-    Launch demo modal
-  </button>
+
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -33,6 +31,7 @@
       <p class="heading__credits"><a class="heading__link" target="_blank" href="https://dribbble.com/sl">Confirm booking</a></p>
     </div>
     @foreach ($confirm_booking as $item )
+
     <div class="cards">
       <div class="card card-1">
         <div class="card__icon"><i class="fas fa-bolt"></i></div>
@@ -40,7 +39,7 @@
         <h2 class="card-title" style="letter-spacing: 5px"><strong>{{$item->vendor_name}}</strong></h2>
         <h5 class="card-text">Your booking for <strong>{{$item->date}}</strong> has been confirmed by <strong>{{$item->vendor_name}}</strong> </h5>
         <p class="card__apply">
-          <a class="card__link" href="#">Book Now  <i class="fas fa-arrow-right"></i></a>
+          <a class="card__link" href="/booknow/{{$item->id}}/{{ date('d-m-Y', strtotime($item->date))}}">Book Now  <i class="fas fa-arrow-right"></i></a>
         </p>
       </div>
 

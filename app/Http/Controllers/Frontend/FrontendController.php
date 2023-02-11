@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use DB;
 use App\Models\Vendors;
 use App\Models\Category;
+use App\Models\BookingNow;
+use App\Models\User;
 class FrontendController extends Controller
 {
     public function index()
@@ -41,6 +43,15 @@ class FrontendController extends Controller
         return('/')->with('status','slug doesnot exists');
      }
     }
+    public function booknow($id,$date)
+    {
+        $datenew=date('m/d/Y', strtotime($date));
+        $user = User::find(Auth::user()->id);
+      $obj = DB::table('booking_now');
+      $data=array('ven_id' => $id,"user_id"=>Auth::user()->id,"date"=>$datenew);
+      $obj->insert($data);
+              return view('frontend.index');
+    }
     public function vendorview($id,$ven_meta)
     {
         if(Category::where('id',$id)->exists())
@@ -68,6 +79,7 @@ class FrontendController extends Controller
                  ->where('booking_confirmation.user_id', '=', Auth::user()->id);
         })
         ->get();
+
 
       return view('frontend.booking_confirm',compact('confirm_booking'));
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class BookingAvailibility extends Migration
+class BookingNow extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class BookingAvailibility extends Migration
      */
     public function up()
     {
-        Schema::create('booking_confirmation', function (Blueprint $table) {
+        Schema::create('booking_now', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('cate_id');
+            $table->bigInteger('ven_id');
             $table->bigInteger('user_id');
             $table->timestamp('created_at');
-            $table->string('booking_availibility');
             $table->string('date');
         });
     }
@@ -30,6 +29,6 @@ class BookingAvailibility extends Migration
      */
     public function down()
     {
-
+        //
     }
 }

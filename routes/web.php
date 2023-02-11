@@ -25,6 +25,7 @@ Route::get('/', [FrontendController::class,'index']);
 
 Route::get('/wait', [FrontendController::class,'wait']);
 Route::get('categorys', [FrontendController::class,'categorys']);
+Route::get('/booknow/{id}/{date}', [FrontendController::class,'booknow']);
 Route::get('view_category/{slug}', [FrontendController::class,'view']);
 Route::get('/vr', [FrontendController::class,'vr']);
 Route::get('view_category/{id}/{ven_meta}', [FrontendController::class,'vendorview']);

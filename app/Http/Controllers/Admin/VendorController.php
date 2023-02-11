@@ -25,6 +25,15 @@ class VendorController extends Controller
     }
     public function insert(Request $request)
     {
+        $this->validate($request,[
+            'vendor_username'=>'required|unique',
+            'vendor_password'=>'required'
+         ]);
+         if ($validator->fails()) {
+            return redirect('/add_vendors')
+                     ->withErrors($validator)
+                     ->withInput();
+          }
         $vendors = new Vendors();
         $user = new User();
         if($request->hasFile('image'))
