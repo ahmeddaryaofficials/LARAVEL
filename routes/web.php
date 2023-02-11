@@ -18,7 +18,9 @@ use App\Http\Controllers\Frontend\FrontendController;
 Route::middleware(['cors'])->group(function () {
     Route::post('/hogehoge', 'Controller@hogehoge');
 });
-
+Route::get('/offline', function () {
+    return view('modules/laravelpwa/offline');
+    });
 Route::get('/', [FrontendController::class,'index']);
 Route::get('/wait', [FrontendController::class,'wait']);
 Route::get('categorys', [FrontendController::class,'categorys']);

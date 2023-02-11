@@ -20,6 +20,7 @@
     <link rel= “manifest” href= “manifest.json” />
     <link href="{{ asset('frontend/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/css/custom.css') }}" rel="stylesheet">
+    @laravelPWA
 </head>
 <body>
     <div id="app">
