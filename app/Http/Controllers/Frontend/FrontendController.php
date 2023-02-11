@@ -16,6 +16,10 @@ class FrontendController extends Controller
         $cat =Category::where('status','0')->get();
           return view('frontend.index',compact('featured_vendor','cat'));
     }
+    public function vr()
+    {
+      return view('vr.vr');
+    }
     public function wait()
     {
        return view('frontend.wait');

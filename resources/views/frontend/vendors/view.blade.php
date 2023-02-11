@@ -47,6 +47,8 @@
                                             Lighting</a>, <a rel="tag" href="#">Photo Session</a>, <a
                                             rel="tag" href="#">Spacious Bridal Room</a>, <a rel="tag"
                                             href="#">V.I.P Crockery & Cutlery</a></span>
+                                            <a style="margin-bottom:10px" class="btn btn-round btn-dark" href="/vr" ><i class="fas fa-vr-cardboard"></i>
+                                                VR 360</a>
                                 @endif
                                 @if ($vendor->cate_id == 10)
                                     <span class="tagged_as"><strong>Menu:</strong> <a rel="tag" href="#">Chicken
@@ -69,6 +71,7 @@
                             @if ($vendor->cate_id == 7)
                                 <button class="btn btn-round btn-success" type="button"><i class="fa fa-shopping-cart"></i>
                                     Photo Gallery</button>
+
                             @endif
                         </p>
                     </div>

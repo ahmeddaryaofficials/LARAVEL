@@ -3,19 +3,17 @@
 view
 @endsection
 @section('content')
-<div class="container mt-5 mb-3">
-
+{{-- <div class="container mt-5 mb-3">
     <div class="row">
         @foreach ( $vendor as $item )
-        <div class="col-md-4" onclick="send()">
-            <a href="{{url('view_category/'.$category->slug.'/'.$item->meta_title)}}">
-            <div class="card p-3 mb-2">
+        <div class="col-md-4">
 
+            <div class="card p-3 mb-2">
                 <div class="d-flex justify-content-between">
                     <div class="d-flex flex-row align-items-center">
                         <div class="icon"> <img src="{{asset('assets/uploads/vendors/'.$item->image)}}" alt="rover" /> </div>
                         <div class="ms-2 c-details">
-                            <h6 class="mb-0">{{$item->vendor_name}}</h6> <span>starting from : {{$item->selling_price}}</span>
+                            <h6 class="mb-0">{{$item->vendor_name}}</h6> <span>Starting from : {{$item->selling_price}}</span>
                         </div>
                     </div>
                     <div class="badge"> <span>@if ($item->cate_id == 7)
@@ -33,13 +31,12 @@ view
 
                 </div>
             </div>
-        </a>
+
         </div>
         @endforeach
 
 
     </div>
-
 </div>
 <style>
     body {
@@ -49,7 +46,7 @@ view
 .card {
     border: none;
     border-radius: 10px;
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
 }
 
 .c-details span {
@@ -96,11 +93,10 @@ view
 }
 
 .text2 {
-    color: #ffffff
+    color: #a5aec0
 }
-</style>
+</style> --}}
 
-{{--
 <div class="py-5">
     <div class="container">
         @foreach ( $vendor as $item )
@@ -143,8 +139,8 @@ view
 
 .container {
   display: flex;
-  width: 1040px;
-  justify-content: space-evenly;
+  width: 98%;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .card {
@@ -211,5 +207,5 @@ view
   color: #545d7a;
 }
 
-</style> --}}
+</style>
 @endsection

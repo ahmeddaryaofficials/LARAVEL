@@ -9,7 +9,7 @@
 <body>
 
     <a-assets>
-        <img id="MySky" crossorigin  src="https://images.unsplash.com/photo-1470756544705-1848092fbe5f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1378&q=80">
+        <img id="MySky" crossorigin  src="{{asset('assets/uploads/logo/ssuet.jpg')}}">
       </a-assets>
 
     <a-scene>
