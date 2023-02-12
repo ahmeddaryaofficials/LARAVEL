@@ -143,7 +143,15 @@
 
             background: #fff;
         }
+        @media (min-width: 1281px) {
 
+            .panel {
+            margin-top: 10%;
+            border: none;
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.75);
+        }
+
+}
         @media only screen
 and (min-device-width : 320px)
 and (max-device-width : 480px)

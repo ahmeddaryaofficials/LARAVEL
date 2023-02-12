@@ -98,7 +98,8 @@ view
 </style> --}}
 
 <div class="py-5">
-    <h1>Sub Category-{{$category->name}}</h1>
+
+    <h3 style="margin-top: 100px">Sub Category-{{$category->name}}</h3>
     <div class="container">
 
 
@@ -110,7 +111,7 @@ view
           <div class="card-header">
             <img src="{{asset('assets/uploads/vendors/'.$item->image)}}" alt="rover" />
           </div>
-          <div class="card-body">
+          <div id="{{$item->vendor_name}}" class="card-body">
             <span class="tag tag-teal">{{$item->vendor_name}}</span>
             <h4 style="margin-top: 5px ;margin-bottom:10px">
                 {{$item->small_descrip}}
@@ -135,6 +136,8 @@ view
 
 
 </div>
+
+    </script>
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
@@ -146,6 +149,7 @@ view
   width: 98%;
   justify-content: center;
   flex-wrap: wrap;
+
 }
 .card {
   margin: 10px;

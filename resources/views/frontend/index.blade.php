@@ -66,11 +66,7 @@ welcome to Dawat
         </div>
     </div>
 </div>
-<div class="container">
-    <h3 style="margin-bottom:10px">Our Videos</h3>
-    <iframe style=" margin-top:10px;justify-content:center;width: 95% ;height:400px" src="{{asset('assets/uploads/slider/1 (1).mp4')}}" title="Vimeo video" allowfullscreen></iframe>
-    <iframe style="margin-top:10px;justify-content:center; width: 95% ;height:400px" src="{{asset('assets/uploads/slider/1 (2).mp4')}}" title="Vimeo video" allowfullscreen></iframe>
-</div>
+
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-dark text-muted">
     <!-- Section: Social media -->
@@ -187,8 +183,7 @@ welcome to Dawat
 
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-      © 2021 Copyright:
-      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        <img  src="{{asset('assets/uploads/logo/footer.png')}}" alt="">
     </div>
     <!-- Copyright -->
   </footer>
