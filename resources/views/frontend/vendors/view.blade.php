@@ -57,14 +57,38 @@
                                                     VR 360 outside</a>
                                                 </div>
                                 @endif
+                                @if ($vendor->cate_id == 10)
+                                    <span class="tagged_as"><strong>Menu:</strong> <a rel="tag"
+                                            href="#">chicken biryani</a>, <a rel="tag"
+                                            href="#">beef biryani</a>, <a rel="tag" href="#">white pulao</a>, <a rel="tag" href="#">mutton karachi</a>, <a rel="tag"
+                                            href="#">samosa</a>, <a rel="tag" href="#">cheese roll</a>, <a rel="tag" href="#">arabian paratha</a>, <a
+                                            rel="tag" href="#">salad</a>, <a rel="tag"
+                                            href="#">fish</a> and <a rel="tag"
+                                            href="#">much more</a></span>
+                                            <div class="row">
+                                            <a style="margin-bottom:10px" class="btn btn-round btn-dark" href="/vr_inside" ><i class="fas fa-vr-cardboard"></i>
+                                                VR 360 inside</a>
+                                                <a style="margin-bottom:10px" class="btn btn-round btn-dark" href="/vr_outside" ><i class="fas fa-vr-cardboard"></i>
+                                                    VR 360 outside</a>
+                                                </div>
+                                @endif
+                                @if ($vendor->cate_id == 11)
+                                    <span class="tagged_as"><strong>Packages:</strong> <a rel="tag"
+                                            href="#">Photography</a>, <a rel="tag"
+                                            href="#">Videography</a>, <a rel="tag" href="#">Drone shot</a>, <a rel="tag" href="#">360 video</a>, <a rel="tag"
+                                            href="#">Promo video</a></span>
+                                            <div class="row">
+                                            <a style="margin-bottom:10px" class="btn btn-round btn-dark" href="/vr_inside" ><i class="fas fa-vr-cardboard"></i>
+                                                VR 360 inside</a>
+                                                <a style="margin-bottom:10px" class="btn btn-round btn-dark" href="/vr_outside" ><i class="fas fa-vr-cardboard"></i>
+                                                    VR 360 outside</a>
+                                                </div>
+                                @endif
 
 
                                   <!-- rating.js file -->
 
-                                @if ($vendor->cate_id == 10)
-                                    <span class="tagged_as"><strong>Menu:</strong> <a rel="tag" href="#">Chicken
-                                            biryani</a>, <a rel="tag" href="#">Beef biryani</a></span>
-                                @endif
+
                                 <span class="tagged_as"><strong>Select Date:</strong> <input type="text" id="datepicker">
                             </div></span>
                         </div>
