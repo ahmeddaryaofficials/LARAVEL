@@ -50,8 +50,12 @@
                                             Lighting</a>, <a rel="tag" href="#">Photo Session</a>, <a
                                             rel="tag" href="#">Spacious Bridal Room</a>, <a rel="tag"
                                             href="#">V.I.P Crockery & Cutlery</a></span>
-                                            <a style="margin-bottom:10px" class="btn btn-round btn-dark" href="/vr" ><i class="fas fa-vr-cardboard"></i>
-                                                VR 360</a>
+                                            <div class="row">
+                                            <a style="margin-bottom:10px" class="btn btn-round btn-dark" href="/vr_inside" ><i class="fas fa-vr-cardboard"></i>
+                                                VR 360 inside</a>
+                                                <a style="margin-bottom:10px" class="btn btn-round btn-dark" href="/vr_outside" ><i class="fas fa-vr-cardboard"></i>
+                                                    VR 360 outside</a>
+                                                </div>
                                 @endif
 
 
