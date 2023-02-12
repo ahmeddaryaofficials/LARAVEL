@@ -59,5 +59,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
  Route::middleware(['auth', 'isVendor'])->group(function () {
     Route::get('vendor_dashboard',  'Vendor\FrontendController@index');
     Route::get('/get_inquiry',  'Vendor\FrontendController@get_inquiry');
+    Route::get('/booking',  'Vendor\FrontendController@booking');
+    Route::get('/calendar',  'Vendor\FrontendController@calendar');
     Route::post('/change_availibility',  'Vendor\FrontendController@change_availibility');
  });

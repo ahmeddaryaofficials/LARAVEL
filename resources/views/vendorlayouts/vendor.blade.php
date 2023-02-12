@@ -44,6 +44,7 @@
     <link rel="stylesheet" href="{{ asset('assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
     <!-- Daterange picker -->
     <link rel="stylesheet" href="{{ asset('assets/plugins/daterangepicker/daterangepicker.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/plugins/fullcalendar/main.css')}}">
     <!-- summernote -->
     <link rel= “manifest” href= “manifest.json” />
     <link href="{{ asset('admin/css/material-dashboard.css?v=3.0.4') }}" rel="stylesheet">
@@ -109,6 +110,8 @@
       <script src="{{ asset('assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
       <!-- AdminLTE App -->
       <script src="{{ asset('assets/dist/js/adminlte.js')}}"></script>
+      <script src="{{asset('assets/plugins/moment/moment.min.js')}}"></script>
+<script src="{{asset('assets/plugins/fullcalendar/main.js')}}"></script>
       <!-- AdminLTE for demo purposes -->
       <script src="{{ asset('assets/dist/js/demo.js')}}"></script>
       <!-- AdminLTE dashboard demo (This is only for demo purposes) -->

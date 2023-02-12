@@ -15,6 +15,15 @@ class FrontendController extends Controller
         $vendors =Vendors::find($id);
        return view('vendor.index',compact('vendors'));
     }
+public function calendar()
+{
+    return view('vendor.calendar');
+}
+    public function booking(Type $var = null)
+    {
+        $booking = DB::table('booking_now')->where('ven_id', Auth::user()->id)->get();
+        return view('vendor.booking',compact('booking'));
+    }
   public function get_inquiry()
   {
     $booking = DB::table('booking_confirmation')->where('cate_id', Auth::user()->id)->get();

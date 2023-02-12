@@ -45,10 +45,28 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link {{'/booking'== request()->path() ? 'active' :''}}" href="{{url('/booking')}}">
+                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>
+                       booking
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link {{'/get_inquiry'== request()->path() ? 'active' :''}}" href="{{url('/get_inquiry')}}">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
                        booking request
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  " href="/calendar">
+                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>
+                       Calendar
                       <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
