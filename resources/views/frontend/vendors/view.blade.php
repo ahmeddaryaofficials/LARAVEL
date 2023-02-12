@@ -104,8 +104,8 @@
                             <button class="btn btn-round btn-danger chat" type="button"><i class="fa fa-shopping-cart" onclick="chat_now()"></i> chat
                                 now</button>
                             @if ($vendor->cate_id == 7)
-                                <button class="btn btn-round btn-success" type="button"><i class="fa fa-shopping-cart"></i>
-                                    Photo Gallery</button>
+                                <a href="/photo_gallery/{{$vendor->id}}" class="btn btn-round btn-success" type="button"><i class="fa fa-shopping-cart"></i>
+                                    Photo Gallery</a>
 
                             @endif
                         </p>

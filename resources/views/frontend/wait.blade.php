@@ -11,6 +11,7 @@ wait
 <style>
 #wait
 {
+    margin-top: 100px;
     justify-content: center;
     vertical-align: center;
     padding: 20px;

@@ -25,6 +25,7 @@ class VendorController extends Controller
     }
     public function insert(Request $request)
     {
+
         $this->validate($request,[
             'vendor_username'=>'required|unique',
             'vendor_password'=>'required'

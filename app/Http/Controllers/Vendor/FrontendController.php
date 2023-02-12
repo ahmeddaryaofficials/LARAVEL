@@ -15,6 +15,30 @@ class FrontendController extends Controller
         $vendors =Vendors::find($id);
        return view('vendor.index',compact('vendors'));
     }
+    public function  upload_gallery(Request $request)
+    {
+
+        $gallery = DB::table('gallery');
+        $id=Auth::user()->id;
+        if($request->hasFile('image'))
+        {
+
+        $file =$request->file('image');
+        $ext=$file->getClientOriginalExtension();
+        $filename = time().'.'.$ext;
+        $file->move('assets/uploads/vendors/'.$id.'/',$filename);
+
+        }
+        $data=array('ven_id' => $id,"image"=>$filename);
+        $gallery->insert($data);
+
+        return redirect('/gallery');
+    }
+    public function gallery()
+    {
+        $gallery = DB::table('gallery')->where('ven_id', Auth::user()->id)->get();
+     return view('vendor.gallery',compact('gallery'));
+    }
 public function calendar()
 {
     return view('vendor.calendar');

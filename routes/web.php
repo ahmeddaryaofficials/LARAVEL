@@ -29,11 +29,11 @@ Route::get('/booknow/{id}/{date}', [FrontendController::class,'booknow']);
 Route::get('view_category/{slug}', [FrontendController::class,'view']);
 Route::get('/vr_inside', [FrontendController::class,'vr_inside']);
 Route::get('/vr_outside', [FrontendController::class,'vr_outside']);
+Route::get('/photo_gallery/{id}', [FrontendController::class,'photo_gallery']);
 Route::get('view_category/{id}/{ven_meta}', [FrontendController::class,'vendorview']);
 Route::post('/send_inquiry',  'BookingController@booking_availibility');
 Route::get('/user_confirm_booking', [FrontendController::class,'confirm_booking']);
 Auth::routes();
-
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -60,6 +60,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::get('vendor_dashboard',  'Vendor\FrontendController@index');
     Route::get('/get_inquiry',  'Vendor\FrontendController@get_inquiry');
     Route::get('/booking',  'Vendor\FrontendController@booking');
+    Route::get('/gallery',  'Vendor\FrontendController@gallery');
     Route::get('/calendar',  'Vendor\FrontendController@calendar');
     Route::post('/change_availibility',  'Vendor\FrontendController@change_availibility');
+    Route::post('/upload_gallery',  'Vendor\FrontendController@upload_gallery');
  });

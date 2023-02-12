@@ -80,6 +80,15 @@
                     </p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link  " href="/gallery">
+                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>
+                       Gallery
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+              </li>
 
 
 

@@ -47,6 +47,11 @@ class FrontendController extends Controller
         return('/')->with('status','slug doesnot exists');
      }
     }
+    public function photo_gallery($id)
+    {
+        $gallery = DB::table('gallery')->where('ven_id',$id)->get();
+        return view('frontend.vendors.gallery',compact('gallery'));
+    }
     public function booknow($id,$date)
     {
         $datenew=date('m/d/Y', strtotime($date));
