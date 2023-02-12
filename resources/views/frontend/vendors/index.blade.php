@@ -98,9 +98,10 @@ view
 </style> --}}
 
 <div class="py-5">
+    <h1>Sub Category-{{$category->name}}</h1>
     <div class="container">
 
-      <h1>Sub Category-{{$category->name}}</h1>
+
 
         @foreach ( $vendor as $item )
 

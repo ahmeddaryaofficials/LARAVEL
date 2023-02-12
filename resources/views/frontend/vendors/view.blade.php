@@ -4,6 +4,9 @@
 @endsection
 @section('content')
     <div class="container">
+        <div class="container">
+            <span id="rateMe1"></span>
+          </div>
         <div class="container bootdey">
             <div class="col-md-12">
                 <section class="panel">
@@ -50,6 +53,10 @@
                                             <a style="margin-bottom:10px" class="btn btn-round btn-dark" href="/vr" ><i class="fas fa-vr-cardboard"></i>
                                                 VR 360</a>
                                 @endif
+
+
+                                  <!-- rating.js file -->
+
                                 @if ($vendor->cate_id == 10)
                                     <span class="tagged_as"><strong>Menu:</strong> <a rel="tag" href="#">Chicken
                                             biryani</a>, <a rel="tag" href="#">Beef biryani</a></span>
@@ -79,8 +86,11 @@
             </section>
         </div>
     </div>
-
-
+      <script>
+        $(document).ready(function() {
+  $('#rateMe1').mdbRate();
+});
+      </script>
     {{-- <div class="card">
 			<div class="container-fliud">
 				<div class="wrapper row">
@@ -134,11 +144,48 @@
             background: #fff;
         }
 
-        /*panel*/
-        .panel {
+        @media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px)
+{
+    .panel {
+            margin-top: 27%;
             border: none;
             box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.75);
         }
+}
+@media only screen
+and (min-device-width : 360px)
+and (max-device-width : 640px)
+{
+    .panel {
+            margin-top: 27%;
+            border: none;
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.75);
+        }
+}
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+{
+    .panel {
+            margin-top: 10%;
+            border: none;
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.75);
+        }
+}
+@media only screen
+and (min-width: 1030px)
+and (max-width: 1366px)
+{
+    .panel {
+            margin-top: 10%;
+            border: none;
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.75);
+        }
+}
+
+
 
         .panel-heading {
             border-color: #eff2f7;

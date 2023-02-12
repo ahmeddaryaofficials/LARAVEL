@@ -65,7 +65,7 @@
 
 /*****************globals*************/
 body {
-  font-family: 'open sans';
+  font-family: bradlay hand ,cursive;
   overflow-x: hidden; }
 
 img {
