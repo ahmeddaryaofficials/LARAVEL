@@ -29,6 +29,7 @@ Route::get('/booknow/{id}/{date}', [FrontendController::class,'booknow']);
 Route::get('view_category/{slug}', [FrontendController::class,'view']);
 Route::get('/vr_inside', [FrontendController::class,'vr_inside']);
 Route::get('/vr_outside', [FrontendController::class,'vr_outside']);
+Route::get('/search/{slug}', [FrontendController::class,'search']);
 Route::get('/photo_gallery/{id}', [FrontendController::class,'photo_gallery']);
 Route::get('view_category/{id}/{ven_meta}', [FrontendController::class,'vendorview']);
 Route::post('/send_inquiry',  'BookingController@booking_availibility');

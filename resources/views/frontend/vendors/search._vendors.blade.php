@@ -98,14 +98,13 @@ view
 </style> --}}
 
 <div class="py-5">
-<form action="/search/{{$category->slug}}" method="get" >
-@csrf
-    <div  class="input-group mt-0">
-
-        <input name="search" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-        <button type="submit" class="btn btn-outline-primary">search</button>
-      </div>
-    </form>
+    <form action="search/{{$category->slug}}" method="POST" enctype="multipart/form-data">
+        @csrf
+            <div  class="input-group mt-0">
+                <input name="search" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                <button type="submit" class="btn btn-outline-primary">search</button>
+              </div>
+            </form>
 
     <div class="container">
 
@@ -282,3 +281,4 @@ margin-left:auto
 
 </style>
 @endsection
+

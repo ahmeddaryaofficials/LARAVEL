@@ -14,18 +14,21 @@ gallery
 
 
       <div class="col-lg-3 col-md-4 col-6">
-        <a href="#" class="d-block mb-4 h-100">
-          <img class="img-fluid img-thumbnail" src="{{asset('assets/uploads/vendors/'.$item->ven_id.'/'.$item->image.'')}}" alt="">
+        <a id="open"   class="d-block mb-4 h-100" >
+            <input id="img" value="{{$item->image}}" type="text" style="display:none">
+          <img  class="img-fluid img-thumbnail" src="{{asset('assets/uploads/vendors/'.$item->ven_id.'/'.$item->image.'')}}" alt="">
         </a>
       </div>
+
       @endforeach
     </div>
 
   </div>
+
   <style>
          @media (min-width: 1281px) {
 
-.col-6 {
+#panel {
     margin-top: 24%;
 }
 
@@ -34,7 +37,7 @@ gallery
 and (min-device-width : 320px)
 and (max-device-width : 480px)
 {
-    .col-6 {
+    #panel {
     margin-top: 24%;
 }
 
@@ -43,7 +46,7 @@ and (max-device-width : 480px)
 and (min-device-width : 360px)
 and (max-device-width : 640px)
 {
-    .col-6 {
+    #panel {
     margin-top: 24%;
 }
 
@@ -52,7 +55,7 @@ and (max-device-width : 640px)
 and (min-device-width : 768px)
 and (max-device-width : 1024px)
 {
-    .col-6 {
+    #panel {
     margin-top: 12%;
 }
 
@@ -61,7 +64,7 @@ and (max-device-width : 1024px)
 and (min-width: 1030px)
 and (max-width: 1366px)
 {
-    .col-6 {
+    #panel {
     margin-top: 12%;
 }
 

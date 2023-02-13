@@ -49,12 +49,5 @@
 
 
 </div>
-<script>
-$( document ).ready(function() {
-    $("#image").change(function(){
-          var image= $('#image').val();
-          console.log(image)
-        });
-});
-</script>
+
 @endsection

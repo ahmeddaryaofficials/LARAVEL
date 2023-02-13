@@ -52,6 +52,21 @@ class FrontendController extends Controller
         $gallery = DB::table('gallery')->where('ven_id',$id)->get();
         return view('frontend.vendors.gallery',compact('gallery'));
     }
+
+    public function search(Request $request ,$slug)
+    {
+
+        if(Category::where('slug',$slug)->exists())
+     {
+         $category = Category::where('slug',$slug)->first();
+         $vendor =Vendors::where('cate_id',$category->id)->where('vendor_name','LIKE','%'.$request->input('search').'%')->get();
+
+         return view('frontend.vendors.index',compact('category','vendor'));
+     }
+
+    }
+
+
     public function booknow($id,$date)
     {
         $datenew=date('m/d/Y', strtotime($date));
@@ -59,7 +74,10 @@ class FrontendController extends Controller
       $obj = DB::table('booking_now');
       $data=array('ven_id' => $id,"user_id"=>Auth::user()->id,"date"=>$datenew);
       $obj->insert($data);
-              return view('frontend.index');
+      $update=DB::table('booking_confirmation')
+        ->where('cate_id', $id)
+        ->where('user_id',Auth::user()->id)->delete(); // find your user by their email  // optional - to ensure only one record is updated.
+          return redirect('/')->with('booking successfully');
     }
     public function vendorview($id,$ven_meta)
     {

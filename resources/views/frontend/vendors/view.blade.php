@@ -37,9 +37,9 @@
                                 <span class="tagged_as"><strong>Location:</strong> <a rel="tag"
                                         href="#">{{ $vendor->locaation }}</a> <a rel="tag"
                                         href="#"></a>.</span>
-                                <span class="tagged_as"><strong>Minimum guest:</strong> <a rel="tag"
-                                        href="#">{{ $vendor->min }}</a> <a rel="tag" href="#"></a>.</span>
                                 <span class="tagged_as"><strong>Maximum guest:</strong> <a rel="tag"
+                                        href="#">{{ $vendor->min }}</a> <a rel="tag" href="#"></a>.</span>
+                                <span class="tagged_as"><strong>Minimum guest:</strong> <a rel="tag"
                                         href="#">{{ $vendor->max }}</a> <a rel="tag" href="#"></a>.</span>
                                 @if ($vendor->cate_id == 7)
                                     <span class="tagged_as"><strong>Facilities:</strong> <a rel="tag"
@@ -92,7 +92,7 @@
                                 <span class="tagged_as"><strong>Select Date:</strong> <input type="text" id="datepicker">
                             </div></span>
                         </div>
-                        <div class="m-bot15"> <strong>Price : </strong> <span
+                        <div class="m-bot15"> <strong> Starting Price : </strong> <span
                                 class="amount-old">{{ $vendor->original_price }}rs</span> <span
                                 class="pro-price">{{ $vendor->selling_price }}rs</span></div>
                         <div class="form-group">

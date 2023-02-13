@@ -27,14 +27,10 @@ class VendorController extends Controller
     {
 
         $this->validate($request,[
-            'vendor_username'=>'required|unique',
+            'vendor_username'=>'required|email',
             'vendor_password'=>'required'
          ]);
-         if ($validator->fails()) {
-            return redirect('/add_vendors')
-                     ->withErrors($validator)
-                     ->withInput();
-          }
+
         $vendors = new Vendors();
         $user = new User();
         if($request->hasFile('image'))
