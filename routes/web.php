@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\VendorController;
 use App\Http\Controllers\Frontend\FrontendController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,6 +59,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
  //vendors
  Route::middleware(['auth', 'isVendor'])->group(function () {
+    Route::get('generate-pdf', 'Vendor\FrontendController@generatePDF');
     Route::get('vendor_dashboard',  'Vendor\FrontendController@index');
     Route::get('/get_inquiry',  'Vendor\FrontendController@get_inquiry');
     Route::get('/booking',  'Vendor\FrontendController@booking');

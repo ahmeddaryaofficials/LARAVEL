@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Vendors;
 use Illuminate\Support\Facades\Auth;
+use Barryvdh\DomPDF\Facade\Pdf;
+use App\Models\User;
 class FrontendController extends Controller
 {
     public function index()
@@ -60,6 +62,33 @@ public function calendar()
         ->update(array('booking_availibility' => 1));
 
     return ['status' => 200 , 'message' => 'available banquet on this date'];
+  }
+
+  public function generatePDF(Request $request)
+  {
+    $vendor  = $request->input('vendor');
+    $user = $request->input('user');
+    $date = $request->input('date');
+    $guest=$request->input('guest');
+    $price=$request->input('price');
+    $user_query=User::find($user);
+
+    $data = [
+        'vendor' => Auth()->user()->name,
+        'date' => $date,
+        'username' => $user_query->name,
+        'email' => $user_query->email,
+        'price' => $price,
+        'guest' => $guest
+    ];
+
+
+
+    $pdf = Pdf::loadView('vendor.pdf', $data);
+    $update=DB::table('booking_now')
+    ->where('id', $request->input('book_id'))  // find your user by their email  // optional - to ensure only one record is updated.
+    ->update(array('bill_status' => 1,'price_decide'=> $price ,'final_guest' => $guest));
+    return $pdf->download('bill.pdf');
   }
 
 }
