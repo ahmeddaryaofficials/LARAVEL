@@ -12,13 +12,8 @@ var filesToCache = [
     '/images/icons/icon-512x512.png',
 ];
 
-let deferredPrompt;
-window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevents the default mini-infobar or install dialog from appearing on mobile
-  e.preventDefault();
-  // Save the event because you'll need to trigger it later.
-  deferredPrompt = e;
-  self.addEventListener("install", event => {
+// Cache on install
+self.addEventListener("install", event => {
     this.skipWaiting();
     event.waitUntil(
         caches.open(staticCacheName)
@@ -27,9 +22,6 @@ window.addEventListener('beforeinstallprompt', (e) => {
             })
     )
 });
-  showInAppInstallPromotion();
-});
-
 
 // Clear cache on activate
 self.addEventListener('activate', event => {
