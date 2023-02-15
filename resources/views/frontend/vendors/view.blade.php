@@ -66,11 +66,7 @@
                                             href="#">fish</a> and <a rel="tag"
                                             href="#">much more</a></span>
                                             <div class="row">
-                                            <a style="margin-bottom:10px" class="btn btn-round btn-dark" href="/vr_inside" ><i class="fas fa-vr-cardboard"></i>
-                                                VR 360 inside</a>
-                                                <a style="margin-bottom:10px" class="btn btn-round btn-dark" href="/vr_outside" ><i class="fas fa-vr-cardboard"></i>
-                                                    VR 360 outside</a>
-                                                </div>
+
                                 @endif
                                 @if ($vendor->cate_id == 11)
                                     <span class="tagged_as"><strong>Packages:</strong> <a rel="tag"
@@ -78,11 +74,7 @@
                                             href="#">Videography</a>, <a rel="tag" href="#">Drone shot</a>, <a rel="tag" href="#">360 video</a>, <a rel="tag"
                                             href="#">Promo video</a></span>
                                             <div class="row">
-                                            <a style="margin-bottom:10px" class="btn btn-round btn-dark" href="/vr_inside" ><i class="fas fa-vr-cardboard"></i>
-                                                VR 360 inside</a>
-                                                <a style="margin-bottom:10px" class="btn btn-round btn-dark" href="/vr_outside" ><i class="fas fa-vr-cardboard"></i>
-                                                    VR 360 outside</a>
-                                                </div>
+
                                 @endif
 
 

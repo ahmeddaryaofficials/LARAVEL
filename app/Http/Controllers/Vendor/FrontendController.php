@@ -14,8 +14,10 @@ class FrontendController extends Controller
     public function index()
     {
         $id=Auth::user()->id;
-        $vendors =Vendors::find($id);
-       return view('vendor.index',compact('vendors'));
+            $booking=DB::table('booking_now')->where('ven_id',$id)->get();
+            $pending=DB::table('booking_confirmation')->where('cate_id',$id)->get();
+
+       return view('vendor.index',compact('booking','pending'));
     }
     public function  upload_gallery(Request $request)
     {
